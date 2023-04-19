@@ -11,7 +11,7 @@ export interface Room{
 export default class RoomService{
 
     static getUserRooms(idUser:number): Promise<Room[]> {
-        return HttpService.get('rooms/idOwner='+idUser);
+        return HttpService.get('rooms/?filter=idOwner='+idUser);
     }
 
     static getAll(): Promise<Room[]> {
