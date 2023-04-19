@@ -9,5 +9,15 @@ class HttpService {
             return response.json();
         });
     }
+
+    static post(url: string, data: any, headers?: any): Promise<any> {
+        return fetch(API_URL+url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+        }).then(response => {
+            return response.json();
+        });
+    }
 }
 export default HttpService;

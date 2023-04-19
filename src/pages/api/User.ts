@@ -7,7 +7,12 @@ export interface User{
     email: string;
     completeName: string;
 }
+export default class UserService{
+    static getAll(): Promise<User[]> {
+        return HttpService.get('users');
+    }
 
-export function getUsers(): Promise<User[]> {
-    return HttpService.get('users');
+    static add(user: User): Promise<User> {
+        return HttpService.post('users', user);
+    }
 }
