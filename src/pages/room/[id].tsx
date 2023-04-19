@@ -12,7 +12,7 @@ function RoomPage({rooms}:{rooms:Room[]}) {
   );
 }
 
-let getServersideProps = async (context) => {
+let getServerSideProps = async (context) => {
     const userId:number = context.query.id as number;
     console.log(userId)
     let rooms=await RoomService.getUserRooms(userId);
@@ -22,6 +22,6 @@ let getServersideProps = async (context) => {
         }
     }
 };
-export {getServersideProps};
+export {getServerSideProps};
 
 export default RoomPage;
