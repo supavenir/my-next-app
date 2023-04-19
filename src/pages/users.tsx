@@ -11,6 +11,11 @@ function Users(){
             setUsers(response);
         })
     },[]);
+    const addUser = (user:User)=>{
+        UserService.add(user).then((response)=>{
+            setUsers([...users,response]);
+        })
+    }
     return (
         <Layout>
                 <h1>Users</h1>
