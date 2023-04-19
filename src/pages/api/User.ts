@@ -15,4 +15,8 @@ export default class UserService{
     static add(user: User): Promise<User> {
         return HttpService.post('users', user);
     }
+
+    static delete(id: number): Promise<User> {
+        return HttpService.delete('users/'+id);
+    }
 }

@@ -1,4 +1,4 @@
-function UIList({list,callback}:{list: any[],callback:(elm:any)=>string}){
+function UIList({list,callback}:{list: any[],callback:(elm:any)=>string|JSX.Element}){
     return (
         <ul>
             {list.map((item, index) => (

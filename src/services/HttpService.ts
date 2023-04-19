@@ -19,5 +19,14 @@ class HttpService {
             return response.json();
         });
     }
+
+    static delete(url: string, headers?: any): Promise<any> {
+        return fetch(API_URL+url, {
+            method: 'DELETE',
+            headers: headers
+        }).then(response => {
+            return response.json();
+        });
+    }
 }
 export default HttpService;
